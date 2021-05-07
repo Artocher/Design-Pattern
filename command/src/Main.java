@@ -7,7 +7,10 @@ public class Main{
         IEntity human = new Human();
         IEntityCommand moveCommand = new MoveEntityCommand(human);
         IEntityCommand attackCommand = new EntityAttackCommand(monster);
-        moveCommand.execute();
-        attackCommand.execute();
+
+        EntityInvoker entityInvoker = new EntityInvoker(moveCommand);
+        entityInvoker.execute();
+        entityInvoker = new EntityInvoker(attackCommand);
+        entityInvoker.execute();
     }
 }
