@@ -1,7 +1,15 @@
 package src;
 
+import src.DisplayStrategy;
+
 public class Duck implements Toy{
-    public void display(DisplayStrategy displayStrategy){
-        displayStrategy.display();
+    public Duck(DisplayStrategy displayStrategy){
+        _displayStrategy = displayStrategy;
     }
+    
+    public void display(){
+        _displayStrategy.display();
+    }
+
+    private DisplayStrategy _displayStrategy;
 }
